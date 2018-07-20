@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Horloge from './Components/horloge.js'
 
 import Information from './Components/information.js'
-import Meteo from './Components/meteo.js'
 import Depart from './Components/depart.js'
 import Map from './Components/map.js'
 
@@ -19,7 +18,7 @@ class App extends Component {
     departTGV: "16heur Bagdad",
   }
 
-  ComponentDidMount() {
+  componentDidMount() {
 
   }
 
@@ -28,7 +27,6 @@ class App extends Component {
       <div className="App">
         <Horloge />
         <Information />
-        <Meteo />
         <Depart />
         <Map />
       </div>

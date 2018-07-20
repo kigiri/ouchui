@@ -3,7 +3,7 @@ import React from 'react'
 const Depart = () => {
   console.log('depart')
 
-  return(<p>coucou</p>)
+  return(<p>train</p>)
 }
 
 export default Depart
