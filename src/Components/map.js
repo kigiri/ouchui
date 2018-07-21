@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { Scene } from 'react-arcgis';
+// import * as React from 'react';
 
 
+
+let maPosition
 class MapYou extends Component {
 
   state = {
@@ -14,6 +17,8 @@ class MapYou extends Component {
       navigator.geolocation.getCurrentPosition( (position) => {
       this.setState({lat:position.coords.latitude})
       this.setState({lon:position.coords.longitude})
+      maPosition = [this.state.lat,this.state.lon]
+      {console.log(maPosition,'popopi')}
     })
   }
   }
@@ -21,19 +26,14 @@ class MapYou extends Component {
   render() {
     return (
       <div>
-        <p>LATITUDE : {this.state.lat}</p>
-        <p>LONGITUDE : {this.state.lon}</p>
-        <p>LA CARTE : </p>
-        <div width="200px">
-          <Map center={[this.state.lat,this.state.lon]} zoom={25}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"/>
-            <Marker position={[this.state.lat,this.state.lon]}>
-              <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-            </Marker>
-          </Map>
-        </div>
+        <Scene
+            style={{ width: '100vw', height: '100vh' }}
+            mapProperties={{ basemap: 'satellite' }}
+            viewProperties={{
+                center: [-122.4443, 47.2529],
+                zoom: 6
+            }}
+        />
       </div>
     )
   }
