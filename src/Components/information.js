@@ -7,7 +7,7 @@ import Fiche from './fiche.js'
 const Information = ({ville, ip, ext}) => {
 
   return (
-    <div>
+    <div >
       <Who ip={ip} />
       <Fiche ville={ville} ext={ext} />
     </div>

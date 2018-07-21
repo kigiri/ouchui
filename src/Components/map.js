@@ -6,8 +6,8 @@ import { Scene } from 'react-arcgis';
 class MapYou extends Component {
 
   state = {
-    lat:"",
-    lon:""
+    lat:"42",
+    lon:"42"
   }
 
   componentDidMount() {
@@ -21,16 +21,18 @@ class MapYou extends Component {
 
   render() {
     return (
-      <div>
-        <p>Latitude : {this.state.lat} | Longitude : {this.state.lon}</p>
-        <Scene
-            style={{ width: '50vw', height: '50vh' }}
-            mapProperties={{ basemap: 'streets' }}
-            viewProperties={{
-                center: [this.state.lon, this.state.lat],
-                scale:10000
-            }}
-        />
+      <div className=''>
+        <div className="row cadre position">
+          <p> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </p>
+        </div>
+          <Scene
+              style={{ width: '100vw', height: '100vh' }}
+              mapProperties={{ basemap: 'streets' }}
+              viewProperties={{
+                  center: [this.state.lon, this.state.lat],
+                  scale:10000
+              }}
+          />
       </div>
     )
   }

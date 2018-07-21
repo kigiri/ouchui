@@ -1,17 +1,25 @@
 import React from 'react'
 
-const Horloge = () => {
+class Horloge extends React.Component {
+  state = {
+        time : new Date().toLocaleString()
+  }
+  componentDidMount() {
+    setInterval( () => {
+      this.setState({
+        time : new Date().toLocaleString()
+      })
+    },1000)
+  }
 
-  const time = Date.now()
-  const day = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
-  const month = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre']
-  return (
-    <div>
-      <p>
-        {time}
-      </p>
-    </div>
-  )
+  render() {
+    return (
+      <div >
+        <p>le {this.state.time} </p>
+        <hr />
+      </div>
+    )
+}
 }
 
 export default Horloge

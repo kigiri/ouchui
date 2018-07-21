@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 
 import Horloge from './Components/horloge.js'
-
 import Information from './Components/information.js'
 import MapYou from './Components/map.js'
 
 import './App.css'
-
 
 
 class App extends Component {
@@ -40,11 +38,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Horloge />
-        <Information ip={this.state.ip} ville={this.state.ville} ext={this.state.ext} />
-        <MapYou />
+      <div className="app" >
+        <div className="row fiche cadre" >
+          <Horloge />
+          <Information ip={this.state.ip} ville={this.state.ville} ext={this.state.ext} />
+        </div>
+        <div className="mapDisplay" >
+          <MapYou />
       </div>
+    </div>
     )
   }
 }

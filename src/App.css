@@ -1,0 +1,40 @@
+
+.app {
+  display:flex;
+  justify-content: center;
+}
+
+.row {
+  display:grid;
+  text-align:center;
+}
+
+.cadre {
+  background: rgba(87, 230, 122, 0.336);
+  border:solid 2px black;
+  opacity: 1;
+}
+
+.position {
+  z-index: 5;
+  position: absolute;
+  top:0;
+  right: 0;
+  margin-left:50px;
+}
+
+.fiche {
+  z-index: 5;
+  position: absolute;
+
+  display:grid;
+  justify-content: center;
+  padding: 1vmax;
+  bottom: 0;
+}
+
+.mapDisplay {
+  z-index: 1;
+  opacity: 0.7;
+  position: absolute;
+}
