@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Horloge from './Components/horloge.js'
 
 import Information from './Components/information.js'
-import Map from './Components/map.js'
+import MapYou from './Components/map.js'
 
 import './App.css'
 
@@ -43,7 +43,7 @@ class App extends Component {
       <div className="App">
         <Horloge />
         <Information ip={this.state.ip} ville={this.state.ville} ext={this.state.ext} />
-        <Map />
+        <MapYou />
       </div>
     )
   }
