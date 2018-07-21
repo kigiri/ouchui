@@ -1,17 +1,15 @@
 import React from 'react'
 
-import IpHost from './ip.js'
-import Ipublic from './ipublic.js'
-import Meteo from './meteo.js'
+import Who from './ip.js'
+import Fiche from './fiche.js'
 
 
-const Information = () => {
+const Information = ({ville, ip, ext}) => {
 
   return (
     <div>
-      <IpHost />
-      <Ipublic />
-      <Meteo />
+      <Who ip={ip} />
+      <Fiche ville={ville} ext={ext} />
     </div>
   )
 }

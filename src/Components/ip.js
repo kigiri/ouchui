@@ -40,7 +40,7 @@ const getUserIP = (onNewIP) => {
 }
 
 
-class IpHost extends Component {
+class Who extends Component {
 
 
   state = {
@@ -56,8 +56,13 @@ class IpHost extends Component {
 
 
   render() {
-    return (<p>Local : {this.state.ipHost}</p>)
+    return (
+    <div>
+      <p>public : {this.props.ip}</p>
+      <p>Local : {this.state.ipHost}</p>
+    </div>
+    )
   }
 }
 
-  export default IpHost
+  export default Who
