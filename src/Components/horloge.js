@@ -14,9 +14,8 @@ class Horloge extends React.Component {
 
   render() {
     return (
-      <div >
-        <p>le {this.state.time} </p>
-        <hr />
+        <div className="heure">
+        <p > {this.state.time} </p>
       </div>
     )
 }

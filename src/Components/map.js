@@ -18,18 +18,17 @@ class MapYou extends Component {
       })
     }
   }
-
   render() {
     return (
       <div className=''>
         <div className="row cadre position">
-          <h5> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </h5>
+          <p> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </p>
         </div>
           <Scene
-              style={{ width: '100vw', height: '100vh' }}
+              style={{ width: '100vw', height: '105vh' }}
               mapProperties={{ basemap: 'streets' }}
               viewProperties={{
-                  center: [this.state.lon, this.state.lat],
+                  center: [(this.state.lon), (this.state.lat - 0.002000005005050)],
                   scale:10000
               }}
           />

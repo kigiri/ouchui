@@ -59,7 +59,7 @@ class Who extends Component {
     return (
     <div>
       <h6 className='row' >Informations</h6>
-      <p>public : {this.props.ip}</p>
+      <p>IP : {this.props.ip}</p>
       <p>Local : {this.state.ipHost}</p>
     </div>
     )

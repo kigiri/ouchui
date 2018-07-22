@@ -7,12 +7,11 @@ import Fiche from './fiche.js'
 const Information = ({props}) => {
   return (
     <div className='box'>
-      <div className='boxLeft'>
-       <Who  ip={props.ip} />
-      </div>
-      <hr />
       <div className='boxRight' >
         <Fiche ville={props.ville} ext={props.ext} codePostal={props.codePostal} />
+      </div>
+      <div className='boxLeft'>
+       <Who  ip={props.ip} />
       </div>
     </div>
   )

@@ -40,14 +40,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app" >
-        <div className="row fiche cadre" >
+      <div >
+        <div class="sigContain">
+          <div class="signal s1"></div>
+          <div class="signal s2"></div>
+          <div class="signal s3"></div>
+          <div class="signal s4"></div>
+        </div>
+        <div className="app row fiche cadre" >
           <Horloge />
           <Information props={this.state} />
-          {/* codePostal={this.state.codePostal}
-          ip={this.state.ip}
-          ville={this.state.ville}
-          ext={this.state.ext} */}
         </div>
         <div className="mapDisplay" >
           <MapYou />

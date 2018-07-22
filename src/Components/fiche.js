@@ -41,26 +41,29 @@ class Fiche extends Component {
       return (
         <div>
           <h6 className='row' >Environement</h6>
-          <div className='box' >
-            <p className=''> {this.state.meteoDes} {this.state.temp} °C </p>
+          <div className='box tassage' >
             <img className='' src={`http://openweathermap.org/img/w/${this.state.meteoImg}.png`} />
+            <p className=''> {this.state.meteoDes} {this.state.temp} °C </p>
           </div>
-          <p>{this.state.ville}</p>
-          <p>{this.state.population} personnes</p>
+          <p >{this.state.ville}</p>
+          <p  >{this.state.population} habitants</p>
         </div>
       )
     }else {
         return (
           <div>
             <h6 className='row max' >Environement</h6>
-            <div className='app box' >
-              <CircularProgress mode="indeterminate" color="#ffcc00"  size={20} />
-            </div>
-            <p>Ville : Load...
+            <p className='tassage'>
               <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
+              Meteo
             </p>
-            <p>Population : Load...
+            <p>
               <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
+              Ville
+            </p>
+            <p>
+              <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
+              Population
             </p>
           </div>
        )
