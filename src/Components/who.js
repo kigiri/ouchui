@@ -58,6 +58,7 @@ class Who extends Component {
   render() {
     return (
     <div>
+      <h6 className='row' >Informations</h6>
       <p>public : {this.props.ip}</p>
       <p>Local : {this.state.ipHost}</p>
     </div>

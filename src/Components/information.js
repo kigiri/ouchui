@@ -1,15 +1,19 @@
 import React from 'react'
 
-import Who from './ip.js'
+import Who from './who.js'
 import Fiche from './fiche.js'
 
-
-const Information = ({ville, ip, ext}) => {
-
+// codePostal, ville, ip, ext
+const Information = ({props}) => {
   return (
-    <div >
-      <Who ip={ip} />
-      <Fiche ville={ville} ext={ext} />
+    <div className='box'>
+      <div className='boxLeft'>
+       <Who  ip={props.ip} />
+      </div>
+      <hr />
+      <div className='boxRight' >
+        <Fiche ville={props.ville} ext={props.ext} codePostal={props.codePostal} />
+      </div>
     </div>
   )
 }

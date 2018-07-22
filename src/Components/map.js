@@ -23,7 +23,7 @@ class MapYou extends Component {
     return (
       <div className=''>
         <div className="row cadre position">
-          <p> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </p>
+          <h5> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </h5>
         </div>
           <Scene
               style={{ width: '100vw', height: '100vh' }}

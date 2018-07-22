@@ -9,10 +9,15 @@
   text-align:center;
 }
 
+h6 {
+  text-decoration:underline;
+}
+
 .cadre {
   background: rgba(87, 230, 122, 0.336);
   border:solid 2px black;
   opacity: 1;
+  padding: 7px;
 }
 
 .position {
@@ -31,6 +36,24 @@
   justify-content: center;
   padding: 1vmax;
   bottom: 0;
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
+.boxLeft {
+  flex-direction: column;
+  width: 50%;
+  padding: 7px;
+}
+
+.boxRight {
+  flex-direction: column;
+  width: 50%;
+  padding: 7px;
 }
 
 .mapDisplay {

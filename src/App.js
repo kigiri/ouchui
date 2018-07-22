@@ -11,7 +11,8 @@ class App extends Component {
 
   state = {
     ip:"127.0.0.1",
-    ville:"metroPolice",
+    ville:"Load...",
+    codePostal:null,
     ext:undefined,
     time:Date.now()
   }
@@ -27,6 +28,7 @@ class App extends Component {
         .then(req => req.json())
         .then(res => {
           this.setState({ville:res.city})
+          this.setState({codePostal:res.zip})
           fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res.city}&units=metric&APPID=339ca6935cce3023e268810a00f76910`)
           .then(req => req.json())
           .then(res => {
@@ -41,7 +43,11 @@ class App extends Component {
       <div className="app" >
         <div className="row fiche cadre" >
           <Horloge />
-          <Information ip={this.state.ip} ville={this.state.ville} ext={this.state.ext} />
+          <Information props={this.state} />
+          {/* codePostal={this.state.codePostal}
+          ip={this.state.ip}
+          ville={this.state.ville}
+          ext={this.state.ext} */}
         </div>
         <div className="mapDisplay" >
           <MapYou />
