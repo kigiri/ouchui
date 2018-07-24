@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import Horloge from './Components/horloge.js'
 import Information from './Components/information.js'
-import MapYou from './Components/map.js'
+import Map from './Components/map.js'
 
-import './App.css'
-
+import './style/radar.css'
+import './style/app.css'
 
 class App extends Component {
 
@@ -30,31 +30,26 @@ class App extends Component {
           this.setState({ville:res.city})
           this.setState({codePostal:res.zip})
           fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res.city}&units=metric&APPID=339ca6935cce3023e268810a00f76910`)
-          .then(req => req.json())
-          .then(res => {
-            this.setState({ext:res})
-          })
+            .then(req => req.json())
+            .then(res => {
+             this.setState({ext:res})
+            })
         })
       })
   }
 
   render() {
     return (
-      <div >
-        <div class="sigContain">
-          <div class="signal s1"></div>
-          <div class="signal s2"></div>
-          <div class="signal s3"></div>
-          <div class="signal s4"></div>
-        </div>
+      <div className="center" >
         <div className="app row fiche cadre" >
           <Horloge />
           <Information props={this.state} />
         </div>
         <div className="mapDisplay" >
-          <MapYou />
+          <div class="pulse"></div>
+          <Map />
+          </div>
       </div>
-    </div>
     )
   }
 }

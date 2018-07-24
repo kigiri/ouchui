@@ -1,0 +1,24 @@
+.pulse,
+.pulse:after {
+  display:inline-block;
+  padding:.5rem;
+  border-radius:50%;
+  animation:pulse 1.5s .85s infinite ease-out;
+  border:thick solid rgba(230,230,230,0);
+  transform:scale3d(.7,.7,0);
+  transition:opacity .75s;
+}
+.pulse { z-index:3;position:absolute; left:50%; top:37%; margin-top:-100px; margin-left:-100px; }
+.pulse:after {
+  display:block;
+  content:"";
+  padding:5rem;
+}
+
+@keyframes pulse {
+  50% {
+    border-color:rgba(32,194,14,0.3);
+    background:transparent;
+  }
+  to { border-color:transparent; transform:none; }
+}

@@ -3,7 +3,7 @@ import { Scene } from 'react-arcgis';
 
 
 
-class MapYou extends Component {
+class Map extends Component {
 
   state = {
     lat:"42",
@@ -25,7 +25,7 @@ class MapYou extends Component {
           <p> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </p>
         </div>
           <Scene
-              style={{ width: '100vw', height: '105vh' }}
+              style={{ width: '100vw', height: '110vh' }}
               mapProperties={{ basemap: 'streets' }}
               viewProperties={{
                   center: [(this.state.lon), (this.state.lat - 0.002000005005050)],
@@ -37,4 +37,4 @@ class MapYou extends Component {
   }
 }
 
-export default MapYou
+export default Map
