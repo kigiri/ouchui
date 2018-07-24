@@ -1,14 +1,16 @@
 .pulse,
 .pulse:after {
+  animation-delay: 10s;
   display:inline-block;
-  padding:.5rem;
+  padding:0.5rem;
   border-radius:50%;
-  animation:pulse 1.5s .85s infinite ease-out;
+  animation:pulse 2s .65s infinite ease-out;
   border:thick solid rgba(230,230,230,0);
-  transform:scale3d(.7,.7,0);
+  transform:scale3d(0.5,0.5,0);
   transition:opacity .75s;
 }
-.pulse { z-index:3;position:absolute; left:50%; top:37%; margin-top:-100px; margin-left:-100px; }
+
+.pulse { z-index:3;position:absolute; left:50%; top:37%; margin-top:-100px; margin-left:-100px;animation-delay: 6s; }
 .pulse:after {
   display:block;
   content:"";
@@ -17,7 +19,7 @@
 
 @keyframes pulse {
   50% {
-    border-color:rgba(32,194,14,0.3);
+    border-color:rgba(103, 160, 187, 0.534);
     background:transparent;
   }
   to { border-color:transparent; transform:none; }

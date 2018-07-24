@@ -1,5 +1,11 @@
 import React from 'react'
 
+let sessionTime = 0
+
+setInterval(() => {
+  sessionTime++
+}, 1000)
+
 class Horloge extends React.Component {
   state = {
         time : new Date().toLocaleString()
@@ -15,7 +21,8 @@ class Horloge extends React.Component {
   render() {
     return (
         <div className="heure">
-        <p > {this.state.time} </p>
+        <p> {this.state.time} </p>
+        <p> {sessionTime} </p>
       </div>
     )
 }

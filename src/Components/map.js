@@ -21,8 +21,9 @@ class Map extends Component {
   render() {
     return (
       <div className=''>
-        <div className="row cadre position">
-          <p> Latitude : ({this.state.lat}),  Longitude : ({this.state.lon}) </p>
+        <div className="row grid cadrePosition position">
+          <div>Latitude : ({this.state.lat}) </div>
+          <div>Longitude : ({this.state.lon}) </div>
         </div>
           <Scene
               style={{ width: '100vw', height: '110vh' }}

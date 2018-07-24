@@ -28,8 +28,6 @@ class Fiche extends Component {
       setTimeout(() => this.setState({load:true}) , 500)
     }
     if (props.codePostal && !this.state.load && props.ville) {
-      console.log(props,'putain t ki')
-      console.log('dedans je suis')
       fetch(`https://geo.api.gouv.fr/communes?codePostal=${props.codePostal}`, myInit)
       .then(req => req.json())
       .then(res => this.setState({population : res.filter(e => e.nom === props.ville)[0].population}))
@@ -41,11 +39,11 @@ class Fiche extends Component {
       return (
         <div>
           <h6 className='row' >Environement</h6>
+          <p >{this.state.ville}</p>
           <div className='box tassage' >
             <img className='' src={`http://openweathermap.org/img/w/${this.state.meteoImg}.png`} />
             <p className=''> {this.state.meteoDes} {this.state.temp} °C </p>
           </div>
-          <p >{this.state.ville}</p>
           <p  >{this.state.population} habitants</p>
         </div>
       )
@@ -53,18 +51,7 @@ class Fiche extends Component {
         return (
           <div>
             <h6 className='row max' >Environement</h6>
-            <p className='tassage'>
               <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
-              Meteo
-            </p>
-            <p>
-              <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
-              Ville
-            </p>
-            <p>
-              <CircularProgress mode="indeterminate" color="#ffcc00"  size={10} />
-              Population
-            </p>
           </div>
        )
     }

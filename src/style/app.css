@@ -12,23 +12,36 @@ h6 {
   text-decoration:underline;
 }
 
-.cadre {
+.cadrePosition {
   background: rgba(103, 160, 187, 0.534);
-  border:solid 2px black;
+  border:solid 3px white;
   opacity: 1;
   padding: 7px;
+  border-radius: 2%;
+  text-align: left;
+}
+
+.cadre {
+  background: rgba(103, 160, 187, 0.534);
+  border:solid 5px white;
+  opacity: 1;
+  padding: 7px;
+  border-radius: 10% / 50%;
 }
 
 .position {
   z-index: 5;
   position: absolute;
-  top:0;
-  right: 0;
-  margin-left:50px;
+  top:1vh;
+  right: 1vh;
+  margin-left:15vw;
+  padding-left:10vw;
+  padding-right:10vw;
 }
 
 .heure {
   height: 10px;
+  color:white;
 }
 
 .center {
@@ -39,14 +52,13 @@ h6 {
 .fiche {
   z-index: 5;
   position: absolute;
-  bottom: 0;
+  bottom: 1vh;
 
   display:grid;
   justify-content: center;
 
-  height: 30vh;
-  padding: 1vmax;
-  margin: 3vw;
+  height: 40vh;
+  width: 70vw;
 }
 
 .tassage {

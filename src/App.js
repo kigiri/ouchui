@@ -46,7 +46,7 @@ class App extends Component {
           <Information props={this.state} />
         </div>
         <div className="mapDisplay" >
-          <div class="pulse"></div>
+          <div className="pulse"></div>
           <Map />
           </div>
       </div>

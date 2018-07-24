@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+const browser = navigator.platform
 const getUserIP = (onNewIP) => {
 
   //compatibility for firefox and chrome
@@ -61,6 +62,7 @@ class Who extends Component {
       <h6 className='row' >Informations</h6>
       <p>IP : {this.props.ip}</p>
       <p>Local : {this.state.ipHost}</p>
+      <p>Os : {browser} </p>
     </div>
     )
   }
