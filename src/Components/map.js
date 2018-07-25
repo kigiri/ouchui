@@ -6,8 +6,8 @@ import { Scene } from 'react-arcgis';
 class Map extends Component {
 
   state = {
-    lat:"42",
-    lon:"42"
+    lat:null,
+    lon:null
   }
 
   componentDidMount() {
@@ -19,8 +19,10 @@ class Map extends Component {
     }
   }
   render() {
-    return (
-      <div className=''>
+    if (this.state.lat){
+
+      return (
+        <div className=''>
         <div className="row grid cadrePosition position">
           <div>Latitude : ({this.state.lat}) </div>
           <div>Longitude : ({this.state.lon}) </div>
@@ -35,6 +37,14 @@ class Map extends Component {
           />
       </div>
     )
+  }
+  else {
+    return (
+      <div>
+        PAS DE MAP
+      </div>
+    )
+  }
   }
 }
 

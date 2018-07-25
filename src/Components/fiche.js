@@ -9,6 +9,7 @@ class Fiche extends Component {
 
   state = {
     load:false,
+    load2:false,
     ville:'',
     codePostal:'',
     population:'',
@@ -27,10 +28,12 @@ class Fiche extends Component {
       this.setState({temp : props.ext.main.temp})
       setTimeout(() => this.setState({load:true}) , 500)
     }
-    if (props.codePostal && !this.state.load && props.ville) {
+    if (props.codePostal && !this.state.load2 && props.ville) {
       fetch(`https://geo.api.gouv.fr/communes?codePostal=${props.codePostal}`, myInit)
       .then(req => req.json())
       .then(res => this.setState({population : res.filter(e => e.nom === props.ville)[0].population}))
+      setTimeout(() => this.setState({load2:true}) , 500)
+
     }
   }
 

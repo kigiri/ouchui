@@ -1,2 +1,3 @@
 # OuChui
-Geolocalisation , Where are you ? Javascript
+-Geolocalisation , Where are you ? Javascript
+-Debug in progress..
