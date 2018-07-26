@@ -14,6 +14,7 @@ const Information = ({props}) => {
         meteoDes={props.ext.weather[0].description}
         meteoImg={props.ext.weather[0].icon}
         temp={props.ext.main.temp}
+        population={props.population}
       />
     : <div>
         <h6 className='row max' >Environement</h6>
