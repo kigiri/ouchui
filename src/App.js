@@ -7,6 +7,11 @@ import Map from './Components/map.js'
 import './style/radar.css'
 import './style/app.css'
 
+
+const myInit = { method: 'GET',
+           mode: 'cors',
+           cache: 'default' }
+
 class App extends Component {
 
   state = {
@@ -28,9 +33,18 @@ class App extends Component {
       .then(req => req.json())
       .then(res => {
         this.setState({ville:res.city, codePostal:res.zip})
-        return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res.city}&units=metric&APPID=339ca6935cce3023e268810a00f76910`))
-      .then(req => req.json())
-      .then(res => this.setState({ext:res}))
+        return Promise.all([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res.city}&units=metric&APPID=339ca6935cce3023e268810a00f76910`))
+           .then(req => req.json()),
+          fetch(`https://geo.api.gouv.fr/communes?codePostal=${res.zip}`, myInit)
+            .then(req => req.json()),
+        ])
+      })
+      .then(([ weatherData, cityData ]) =>
+        this.setState({
+          ext: weatherData,
+          population : cityData.filter(e => e.nom === this.state.ville)[0].population,
+       }))
     })
   }
 
